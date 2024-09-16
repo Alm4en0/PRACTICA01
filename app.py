@@ -7,7 +7,7 @@ app = Flask(__name__, template_folder='templates')
 
 # Configuración de la base de datos
 DB_HOST = 'postgresql://p_owwk_user:OKELsTfarYvLAeDQEnR7zgWbbNrUbOga@dpg-crk8is1u0jms73fjrugg-a.oregon-postgres.render.com/p_owwk'
-DB_NAME = 'p_owwk'
+DB_NAME = 'Practica01'
 DB_USER = 'p_owwk_user'
 DB_PASSWORD = 'OKELsTfarYvLAeDQEnR7zgWbbNrUbOga'
 
