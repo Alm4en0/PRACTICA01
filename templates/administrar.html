@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Administrar Registros</title>
+        <link rel="stylesheet" href="/static/styles.css">
+    </head>
+    <body>
+        <div class="container">
+            <h1>Administrar Registros</h1>
+
+            <a href="/" class="administrar-link">Volver al
+                Registro</a>
+            <div class="separator"></div>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>DNI</th>
+                        <th>Nombre</th>
+                        <th>Apellido</th>
+                        <th>Dirección</th>
+                        <th>Teléfono</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for registro in registros %}
+                    <tr>
+                        <td>{{ registro[1] }}</td>
+                        <!-- Asumiendo que dni está en la columna 1 -->
+                        <td>{{ registro[2] }}</td>
+                        <!-- Asumiendo que nombre está en la columna 2 -->
+                        <td>{{ registro[3] }}</td>
+                        <!-- Asumiendo que apellido está en la columna 3 -->
+                        <td>{{ registro[4] }}</td>
+                        <!-- Asumiendo que dirección está en la columna 4 -->
+                        <td>{{ registro[5] }}</td>
+                        <!-- Asumiendo que teléfono está en la columna 5 -->
+                        <td>
+                            <form action="/eliminar/{{ registro[1] }}"
+                                method="post" style="display:inline;">
+                                <button type="submit">Eliminar</button>
+                            </form>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </body>
+</html>
